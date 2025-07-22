@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<title>The Right Hand Wants. - 埃內亞的故事</title>
+<style>
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+#map-frame, #details {
+  border: none;
+}
+
+#map-frame {
+  width: 100%;
+  height: 33%;
+}
+
+#details {
+  width: 100%;
+  height: 67%;
+}
+
+/* 桌機模式 */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+  }
+  #map-frame, #details {
+    width: 50%;
+    height: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <iframe src="map.html" id="map-frame" name="map-frame"></iframe>
+  <iframe id="details" name="details-frame" src="details/main.html"></iframe>
+</div>
+
+</body>
+</html>
