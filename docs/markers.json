@@ -97,8 +97,104 @@
     "icon": "plus-sign",
     "title": "1780 - 跟第四任照顧者移居內陸",
     "page": "details/1780.html"
+  },
+  {
+    "id": "1810",
+    "coords": [42.1814979,-89.1351954],
+    "zoom": 12,
+    "year": "1810",
+    "summary": "這段時間如同夢境",
+    "color": "beige",
+    "icon": "hourglass",
+    "title": "1810 - 跟第五任照顧者的生活前期",
+    "page": "details/1810.html"
+  },
+  {
+    "id": "novel_1",
+    "coords": [42.181371, -89.134199],
+    "zoom": 12,
+    "year": "1820",
+    "summary": "C大調",
+    "color": "darkgreen",
+    "icon": "bookmark",
+    "title": "1820 - C大調",
+    "page": "details/novel_1.html"
+  },
+  {
+    "id": "novel_2",
+    "coords": [32.3527, -90.8779],
+    "zoom": 12,
+    "year": "1851",
+    "summary": "餘燼",
+    "color": "darkgreen",
+    "icon": "bookmark",
+    "title": "1851 - 餘燼",
+    "page": "details/novel_2.html"
+  },
+  {
+    "id": "novel_3",
+    "coords": [42.273119, -89.090549],
+    "zoom": 12,
+    "year": "1852",
+    "summary": "詞彙",
+    "color": "darkgreen",
+    "icon": "bookmark",
+    "title": "1852 - 詞彙",
+    "page": "details/novel_3.html"
+  },
+  {
+    "id": "novel_4",
+    "coords": [42.167316, -89.144168],
+    "zoom": 12,
+    "year": "1856",
+    "summary": "惡夢",
+    "color": "darkgreen",
+    "icon": "bookmark",
+    "title": "1856 - 惡夢",
+    "page": "details/novel_4.html"
+  },
+  {
+    "id": "novel_5",
+    "coords": [42.271262, -89.093659],
+    "zoom": 12,
+    "year": "1860",
+    "summary": "奇蹟",
+    "color": "darkgreen",
+    "icon": "bookmark",
+    "title": "1860 - 奇蹟",
+    "page": "details/novel_5.html"
+  },
+  {
+    "id": "novel_6",
+    "coords": [42.271560, -89.092942],
+    "zoom": 12,
+    "year": "2024/1860",
+    "summary": "光秒",
+    "color": "darkgreen",
+    "icon": "bookmark",
+    "title": "2024/1860 - 光秒",
+    "page": "details/novel_6.html"
+  },
+  {
+    "id": "2010",
+    "coords": [34.043930, -118.247710],
+    "zoom": 12,
+    "year": "2010",
+    "summary": "狩獵月",
+    "color": "beige",
+    "icon": "trash",
+    "title": "2010 - 狩獵月",
+    "page": "details/2010.html"
+  },
+  {
+    "id": "2011",
+    "coords": [34.051488, -118.255144],
+    "zoom": 12,
+    "year": "2011",
+    "summary": "鳴門骨",
+    "color": "beige",
+    "icon": "usd",
+    "title": "2011 - 鳴門骨",
+    "page": "details/2011.html"
   }
 ]
-
-
-
