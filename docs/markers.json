@@ -1,0 +1,104 @@
+[
+  {
+    "id": "1644",
+    "coords": [45.445141, 12.326502],
+    "zoom": 12,
+    "year": "1644",
+    "summary": "出生",
+    "color": "beige",
+    "icon": "leaf",
+    "title": "1644 - 出生於威尼斯",
+    "page": "details/1644.html"
+  },
+  {
+    "id": "1660",
+    "coords": [45.431009, 12.334718],
+    "zoom": 12,
+    "year": "1660",
+    "summary": "他的人生停在……",
+    "color": "beige",
+    "icon": "tint",
+    "title": "1660 - 死於黑暗眷族、第一任照顧者",
+    "page": "details/1660.html"
+  },
+  {
+    "id": "1683",
+    "coords": [45.449763, 12.323427],
+    "zoom": 12,
+    "year": "1683",
+    "summary": "在焰火中化成一團焦黑",
+    "color": "beige",
+    "icon": "fire",
+    "title": "1683 - 第一任照顧者死亡、第二任接手",
+    "page": "details/1683.html"
+  },
+  {
+    "id": "1725",
+    "coords": [48.078136, 7.357927],
+    "zoom": 12,
+    "year": "1725",
+    "summary": "他一直待在閣樓看著窗外",
+    "color": "beige",
+    "icon": "eye-open",
+    "title": "1725 - 第二任照顧者死亡、第三任接手",
+    "page": "details/1725.html"
+  },
+  {
+    "id": "1728",
+    "coords": [38.7084, -9.1378],
+    "zoom": 12,
+    "year": "1728",
+    "summary": "那個英國人接手了他",
+    "color": "beige",
+    "icon": "adjust",
+    "title": "1728 - 跟第三任照顧者在里斯本",
+    "page": "details/1725.html"
+  },
+  {
+    "id": "1763",
+    "coords": [51.3694, -2.3428],
+    "zoom": 12,
+    "year": "1763",
+    "summary": "應當明白無法獲得救贖",
+    "color": "beige",
+    "icon": "italic",
+    "title": "1763 - 跟第三任照顧者在英國",
+    "page": "details/1763.html"
+  },
+  {
+    "id": "1770_1",
+    "coords": [51.5205, -0.1227],
+    "zoom": 12,
+    "year": "1770",
+    "summary": "為醫學做出貢獻？",
+    "color": "beige",
+    "icon": "cog",
+    "title": "1770 - 跟第四任照顧者離開英國前",
+    "page": "details/1770_1.html"
+  },
+  {
+    "id": "1770_2",
+    "coords": [39.9526, -75.1652],
+    "zoom": 12,
+    "year": "1770",
+    "summary": "被支解帶往大洋彼岸",
+    "color": "beige",
+    "icon": "cog",
+    "title": "1770 - 跟第四任照顧者前往美國",
+    "page": "details/1770_2.html"
+  },
+  {
+    "id": "1780",
+    "coords": [39.1031, -84.5120],
+    "zoom": 12,
+    "year": "1780",
+    "summary": "這份餽贈他想延續下去",
+    "color": "beige",
+    "icon": "plus-sign",
+    "title": "1780 - 跟第四任照顧者移居內陸",
+    "page": "details/1780.html"
+  }
+]
+
+
+
