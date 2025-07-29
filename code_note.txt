@@ -1,0 +1,145 @@
+folium.Icon 支援顏色
+
+'red'
+'blue'
+'green'
+'purple'
+'orange'
+'darkred'
+'lightred'
+'beige'
+'darkblue'
+'darkgreen'
+'cadetblue'
+'darkpurple'
+'white'
+'pink'
+'lightblue'
+'lightgreen'
+'gray'
+'black'
+'lightgray'
+
+地圖圖示
+https://getbootstrap.com/docs/3.4/components/#glyphicons-how-to-use
+
+
+
+map.html重新輸出後要手動用這些內容去蓋掉裡面的東西
+
+style的部分
+
+            <style>
+                #map_07615c811548d20d15bf8ec4ef022c64 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+                /* Cluster 點的樣式 */
+                .marker-cluster {
+                    background-color: #892f2f !important;
+                    border: none !important;
+                    color: #f3ede1 !important;
+                    font-family: "Georgia", serif;
+                    font-weight: bold;
+                    text-align: center;
+                    box-shadow: inset 0 0 0 3px #892f2f; /* 內邊框改為 inset 描邊 */
+                }
+
+                .marker-cluster div {
+                    background-color: #892f2f !important;
+                    border: none !important;
+                    border-radius: 50%;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .marker-cluster span {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 100%;
+                    height: 100%;
+                    font-weight: bold;
+                    font-size: 14px;
+                }
+
+                /* spider legs 改成深紅色，像血痕延展 */
+                .leaflet-marker-icon.leaflet-spider-leg {
+                    stroke: #6e1a1a !important;
+                }
+
+                .leaflet-marker-icon.leaflet-spider-leg circle {
+                    fill: #6e1a1a !important;
+                }
+
+                .leaflet-marker-icon.leaflet-spider-leg path {
+                    stroke: #6e1a1a !important;
+                }
+
+                /* spider lines */
+                .leaflet-polyline.leaflet-interactive {
+                    stroke: #892f2f !important;
+                    opacity: 0.6 !important;
+                    stroke-width: 2px !important;
+                }
+
+                .leaflet-interactive {
+                    stroke: #892f2f !important;
+                    fill: rgba(137, 47, 47, 0.2) !important;
+                }
+
+            </style>
+
+
+
+body的部分
+
+<body>
+            <div class="folium-map" id="map_07615c811548d20d15bf8ec4ef022c64" ></div>
+        
+            <script>
+            document.addEventListener("DOMContentLoaded", () => {
+            // 找出唯一的 Leaflet 地圖
+            let theMap;
+            for (const key in window) {
+                if (window[key] && typeof window[key].flyTo === 'function' && typeof window[key].getCenter === 'function') {
+                theMap = window[key];
+                break;
+                }
+            }
+
+            if (!theMap) {
+                console.error("找不到地圖實例！");
+                return;
+            }
+
+            window.addEventListener("message", (event) => {
+                if (event.data.type === "flyTo") {
+                const { lat, lng, zoom } = event.data;
+                theMap.flyTo([lat, lng], zoom);
+                }
+            });
+            });
+            </script>
+</body>
