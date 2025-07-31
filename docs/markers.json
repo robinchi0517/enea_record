@@ -196,5 +196,27 @@
     "icon": "usd",
     "title": "2011 - 鳴門骨",
     "page": "details/2011.html"
+  },
+  {
+    "id": "2023",
+    "coords": [48.4215922,-123.3817973],
+    "zoom": 12,
+    "year": "2023",
+    "summary": "紙娃娃",
+    "color": "beige",
+    "icon": "usd",
+    "title": "2023 - 紙娃娃",
+    "page": "details/novel_7.html"
+  },
+  {
+    "id": "2023",
+    "coords": [48.437436,-123.3408183],
+    "zoom": 12,
+    "year": "2023",
+    "summary": "前夜",
+    "color": "beige",
+    "icon": "usd",
+    "title": "2023 - 前夜",
+    "page": "details/novel_8.html"
   }
 ]
