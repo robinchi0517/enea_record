@@ -203,8 +203,8 @@
     "zoom": 12,
     "year": "2023",
     "summary": "紙娃娃",
-    "color": "beige",
-    "icon": "usd",
+    "color": "darkgreen",
+    "icon": "bookmark",
     "title": "2023 - 紙娃娃",
     "page": "details/novel_7.html"
   },
@@ -214,8 +214,8 @@
     "zoom": 12,
     "year": "2023",
     "summary": "前夜",
-    "color": "beige",
-    "icon": "usd",
+    "color": "darkgreen",
+    "icon": "bookmark",
     "title": "2023 - 前夜",
     "page": "details/novel_8.html"
   }
