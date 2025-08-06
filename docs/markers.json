@@ -112,7 +112,7 @@
   {
     "id": "novel_1",
     "coords": [42.181371, -89.134199],
-    "zoom": 12,
+    "zoom": 13,
     "year": "1820",
     "summary": "C大調",
     "color": "darkgreen",
@@ -134,7 +134,7 @@
   {
     "id": "novel_3",
     "coords": [42.273119, -89.090549],
-    "zoom": 12,
+    "zoom": 13,
     "year": "1852",
     "summary": "詞彙",
     "color": "darkgreen",
@@ -145,7 +145,7 @@
   {
     "id": "novel_4",
     "coords": [42.167316, -89.144168],
-    "zoom": 12,
+    "zoom": 13,
     "year": "1856",
     "summary": "惡夢",
     "color": "darkgreen",
@@ -156,7 +156,7 @@
   {
     "id": "novel_5",
     "coords": [42.271262, -89.093659],
-    "zoom": 12,
+    "zoom": 13,
     "year": "1860",
     "summary": "奇蹟",
     "color": "darkgreen",
@@ -167,7 +167,7 @@
   {
     "id": "novel_6",
     "coords": [42.271560, -89.092942],
-    "zoom": 12,
+    "zoom": 13,
     "year": "2024/1860",
     "summary": "光秒",
     "color": "darkgreen",
@@ -178,7 +178,7 @@
   {
     "id": "2010",
     "coords": [34.043930, -118.247710],
-    "zoom": 12,
+    "zoom": 13,
     "year": "2010",
     "summary": "狩獵月",
     "color": "beige",
@@ -189,7 +189,7 @@
   {
     "id": "2011",
     "coords": [34.051488, -118.255144],
-    "zoom": 12,
+    "zoom": 13,
     "year": "2011",
     "summary": "鳴門骨",
     "color": "beige",
@@ -198,9 +198,31 @@
     "page": "details/2011.html"
   },
   {
-    "id": "2023",
+    "id": "novel_10",
+    "coords": [48.416667, -123.389889],
+    "zoom": 13,
+    "year": "2019",
+    "summary": "異客",
+    "color": "darkgreen",
+    "icon": "bookmark",
+    "title": "2019 - 異客",
+    "page": "details/novel_10.html"
+  },
+  {
+    "id": "novel_9",
+    "coords": [48.4399672,-123.3603505],
+    "zoom": 13,
+    "year": "2022",
+    "summary": "男生宿舍二三事",
+    "color": "darkgreen",
+    "icon": "bookmark",
+    "title": "2022 - 男生宿舍二三事",
+    "page": "details/novel_9.html"
+  },
+  {
+    "id": "novel_7",
     "coords": [48.4215922,-123.3817973],
-    "zoom": 12,
+    "zoom": 13,
     "year": "2023",
     "summary": "紙娃娃",
     "color": "darkgreen",
@@ -209,9 +231,9 @@
     "page": "details/novel_7.html"
   },
   {
-    "id": "2023",
+    "id": "novel_8",
     "coords": [48.437436,-123.3408183],
-    "zoom": 12,
+    "zoom": 13,
     "year": "2023",
     "summary": "前夜",
     "color": "darkgreen",
