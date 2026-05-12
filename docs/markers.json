@@ -176,6 +176,17 @@
     "page": "details/novel_6.html"
   },
   {
+    "id": "1866",
+    "coords": [42.2714835, -89.0922337],
+    "zoom": 13,
+    "year": "1866",
+    "summary": "六則新聞",
+    "color": "darkpurple",
+    "icon": "folder-close",
+    "title": "1866 - 洛克福德的六則新聞",
+    "page": "details/1866.html"
+  },
+  {
     "id": "2010",
     "coords": [34.043930, -118.247710],
     "zoom": 13,
@@ -210,7 +221,7 @@
   },
   {
     "id": "novel_9",
-    "coords": [48.4399672,-123.3603505],
+    "coords": [48.4399672, -123.3603505],
     "zoom": 13,
     "year": "2022",
     "summary": "男生宿舍二三事",
@@ -221,7 +232,7 @@
   },
   {
     "id": "novel_7",
-    "coords": [48.4215922,-123.3817973],
+    "coords": [48.4215922, -123.3817973],
     "zoom": 13,
     "year": "2023",
     "summary": "紙娃娃",
@@ -232,7 +243,7 @@
   },
   {
     "id": "novel_8",
-    "coords": [48.437436,-123.3408183],
+    "coords": [48.437436, -123.3408183],
     "zoom": 13,
     "year": "2023",
     "summary": "前夜",
@@ -240,5 +251,16 @@
     "icon": "bookmark",
     "title": "2023 - 前夜",
     "page": "details/novel_8.html"
+  },
+  {
+    "id": "2024",
+    "coords": [48.4309074, -123.3675599],
+    "zoom": 13,
+    "year": "2024",
+    "summary": "盧西塔尼亞皇冠聯營",
+    "color": "darkpurple",
+    "icon": "folder-close",
+    "title": "2024 - 盧西塔尼亞皇冠聯營公司",
+    "page": "details/2024.html"
   }
 ]
