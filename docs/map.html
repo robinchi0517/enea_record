@@ -17,7 +17,7 @@
             <meta name="viewport" content="width=device-width,
                 initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
             <style>
-                #map_3196b73fa37a610f8dbc481b5696bdba {
+                #map_141f77b955319e58827e59f440bea0ac {
                     position: relative;
                     width: 100.0%;
                     height: 100.0%;
@@ -42,60 +42,6 @@
                 right:0;
                 left:0;
                 }
-                /* Cluster 點的樣式 */
-                .marker-cluster {
-                    background-color: #892f2f !important;
-                    border: none !important;
-                    color: #f3ede1 !important;
-                    font-family: "Georgia", serif;
-                    font-weight: bold;
-                    text-align: center;
-                    box-shadow: inset 0 0 0 3px #892f2f; /* 內邊框改為 inset 描邊 */
-                }
-
-                .marker-cluster div {
-                    background-color: #892f2f !important;
-                    border: none !important;
-                    border-radius: 50%;
-                    width: 100%;
-                    height: 100%;
-                }
-
-                .marker-cluster span {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    width: 100%;
-                    height: 100%;
-                    font-weight: bold;
-                    font-size: 14px;
-                }
-
-                /* spider legs 改成深紅色，像血痕延展 */
-                .leaflet-marker-icon.leaflet-spider-leg {
-                    stroke: #6e1a1a !important;
-                }
-
-                .leaflet-marker-icon.leaflet-spider-leg circle {
-                    fill: #6e1a1a !important;
-                }
-
-                .leaflet-marker-icon.leaflet-spider-leg path {
-                    stroke: #6e1a1a !important;
-                }
-
-                /* spider lines */
-                .leaflet-polyline.leaflet-interactive {
-                    stroke: #892f2f !important;
-                    opacity: 0.6 !important;
-                    stroke-width: 2px !important;
-                }
-
-                .leaflet-interactive {
-                    stroke: #892f2f !important;
-                    fill: rgba(137, 47, 47, 0.2) !important;
-                }
-
             </style>
 
             <script>
@@ -107,43 +53,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+<link rel="stylesheet" href="css/map.css">
 </head>
 <body>
     
     
-            <div class="folium-map" id="map_3196b73fa37a610f8dbc481b5696bdba" ></div>
-
-            <script>
-            document.addEventListener("DOMContentLoaded", () => {
-            // 找出唯一的 Leaflet 地圖
-            let theMap;
-            for (const key in window) {
-                if (window[key] && typeof window[key].flyTo === 'function' && typeof window[key].getCenter === 'function') {
-                theMap = window[key];
-                break;
-                }
-            }
-
-            if (!theMap) {
-                console.error("找不到地圖實例！");
-                return;
-            }
-
-            window.addEventListener("message", (event) => {
-                if (event.data.type === "flyTo") {
-                const { lat, lng, zoom } = event.data;
-                theMap.flyTo([lat, lng], zoom);
-                }
-            });
-            });
-            </script>
+            <div class="folium-map" id="map_141f77b955319e58827e59f440bea0ac" ></div>
         
+<script src="js/map.js"></script>
 </body>
 <script>
     
     
-            var map_3196b73fa37a610f8dbc481b5696bdba = L.map(
-                "map_3196b73fa37a610f8dbc481b5696bdba",
+            var map_141f77b955319e58827e59f440bea0ac = L.map(
+                "map_141f77b955319e58827e59f440bea0ac",
                 {
                     center: [47.0, 5.0],
                     crs: L.CRS.EPSG3857,
@@ -160,7 +83,7 @@
 
         
     
-            var tile_layer_586eddba5fd31663028e6991d861e17e = L.tileLayer(
+            var tile_layer_ab387d9f92feb88b4860b9c786683c5b = L.tileLayer(
                 "https://tile.jawg.io/jawg-light/{z}/{x}/{y}{r}.png?access-token=Z31fVQ0pfbHIKPxrAXsQkLlEBYUDxZUK1p46RcHSaEn0ikq6f2UisM5dFliZ9SM9",
                 {
   "minZoom": 0,
@@ -177,23 +100,23 @@
             );
         
     
-            tile_layer_586eddba5fd31663028e6991d861e17e.addTo(map_3196b73fa37a610f8dbc481b5696bdba);
+            tile_layer_ab387d9f92feb88b4860b9c786683c5b.addTo(map_141f77b955319e58827e59f440bea0ac);
         
     
-            var marker_cluster_b6c50360f46acfad9025c7241144bebd = L.markerClusterGroup(
+            var marker_cluster_da0326f309ce90e6b9998148d99f3691 = L.markerClusterGroup(
                 {
 }
             );
         
     
-            var marker_ad9c3065b0a620b54dd6eb6126b0382f = L.marker(
+            var marker_43c8b6ec13bca6db41e1bffa4e7cf330 = L.marker(
                 [45.445141, 12.326502],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_b8336b202cd9cc52a63cf9ab6bc377d0 = L.AwesomeMarkers.icon(
+            var icon_51bfb6d25ef523473c8ed2c394cad090 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "beige",
   "iconColor": "white",
@@ -204,24 +127,24 @@
             );
         
     
-        var popup_ea0ab42fa4d916b9e798b9a993173304 = L.popup({
+        var popup_b3a299c0693cb30877b4f709cc2f96e5 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_104e136148b139af8fac57dfcb3d7c3d = $(`<div id="html_104e136148b139af8fac57dfcb3d7c3d" style="width: 100.0%; height: 100.0%;"><a href="details/1644.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_ea0ab42fa4d916b9e798b9a993173304.setContent(html_104e136148b139af8fac57dfcb3d7c3d);
+                var html_fca7e9a4e19afccde0501f9fc812acd9 = $(`<div id="html_fca7e9a4e19afccde0501f9fc812acd9" style="width: 100.0%; height: 100.0%;"><a href="details/1644.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_b3a299c0693cb30877b4f709cc2f96e5.setContent(html_fca7e9a4e19afccde0501f9fc812acd9);
             
         
 
-        marker_ad9c3065b0a620b54dd6eb6126b0382f.bindPopup(popup_ea0ab42fa4d916b9e798b9a993173304)
+        marker_43c8b6ec13bca6db41e1bffa4e7cf330.bindPopup(popup_b3a299c0693cb30877b4f709cc2f96e5)
         ;
 
         
     
     
-            marker_ad9c3065b0a620b54dd6eb6126b0382f.bindTooltip(
+            marker_43c8b6ec13bca6db41e1bffa4e7cf330.bindTooltip(
                 `<div>
                      1644 — 出生
                  </div>`,
@@ -231,17 +154,17 @@
             );
         
     
-                marker_ad9c3065b0a620b54dd6eb6126b0382f.setIcon(icon_b8336b202cd9cc52a63cf9ab6bc377d0);
+                marker_43c8b6ec13bca6db41e1bffa4e7cf330.setIcon(icon_51bfb6d25ef523473c8ed2c394cad090);
             
     
-            var marker_51d48333d9ed2583cab5e3411b8c9011 = L.marker(
+            var marker_86a2ce5d543c500cf6dea0ca5a9c0dff = L.marker(
                 [45.431009, 12.334718],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_586813244fd279c2268574a8ad2f4166 = L.AwesomeMarkers.icon(
+            var icon_231fd96bca831e98f93629b7e36f4ee8 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "beige",
   "iconColor": "white",
@@ -252,24 +175,24 @@
             );
         
     
-        var popup_403ba3fe59bc8dfaa7d902c5c223abd4 = L.popup({
+        var popup_5c69e5b531a5254ca5d53c30bf99b9b3 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_f3a4f785ef9b07696b17e5240b4a09e2 = $(`<div id="html_f3a4f785ef9b07696b17e5240b4a09e2" style="width: 100.0%; height: 100.0%;"><a href="details/1660.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_403ba3fe59bc8dfaa7d902c5c223abd4.setContent(html_f3a4f785ef9b07696b17e5240b4a09e2);
+                var html_16d497c35bc11661cc7e8089412362d6 = $(`<div id="html_16d497c35bc11661cc7e8089412362d6" style="width: 100.0%; height: 100.0%;"><a href="details/1660.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_5c69e5b531a5254ca5d53c30bf99b9b3.setContent(html_16d497c35bc11661cc7e8089412362d6);
             
         
 
-        marker_51d48333d9ed2583cab5e3411b8c9011.bindPopup(popup_403ba3fe59bc8dfaa7d902c5c223abd4)
+        marker_86a2ce5d543c500cf6dea0ca5a9c0dff.bindPopup(popup_5c69e5b531a5254ca5d53c30bf99b9b3)
         ;
 
         
     
     
-            marker_51d48333d9ed2583cab5e3411b8c9011.bindTooltip(
+            marker_86a2ce5d543c500cf6dea0ca5a9c0dff.bindTooltip(
                 `<div>
                      1660 — 他的人生停在……
                  </div>`,
@@ -279,17 +202,17 @@
             );
         
     
-                marker_51d48333d9ed2583cab5e3411b8c9011.setIcon(icon_586813244fd279c2268574a8ad2f4166);
+                marker_86a2ce5d543c500cf6dea0ca5a9c0dff.setIcon(icon_231fd96bca831e98f93629b7e36f4ee8);
             
     
-            var marker_7619363224316c1ca1d024ac22e9f5b5 = L.marker(
+            var marker_b137c7c61268e5041b263f8d3fe79551 = L.marker(
                 [45.449763, 12.323427],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_38be5f23aae6e7915de430bcf5ce4f04 = L.AwesomeMarkers.icon(
+            var icon_14519aacf0d7d9abb9f535f8b650edfe = L.AwesomeMarkers.icon(
                 {
   "markerColor": "beige",
   "iconColor": "white",
@@ -300,24 +223,24 @@
             );
         
     
-        var popup_8ae0094cf0e58bed7848b0e6a0f07977 = L.popup({
+        var popup_719f70193aaf3fd5f49c77f9f34fb67d = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_21e2c870a840e791a5d5e3426e96e562 = $(`<div id="html_21e2c870a840e791a5d5e3426e96e562" style="width: 100.0%; height: 100.0%;"><a href="details/1683.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_8ae0094cf0e58bed7848b0e6a0f07977.setContent(html_21e2c870a840e791a5d5e3426e96e562);
+                var html_8eea3238c005277e9379a88128669f2e = $(`<div id="html_8eea3238c005277e9379a88128669f2e" style="width: 100.0%; height: 100.0%;"><a href="details/1683.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_719f70193aaf3fd5f49c77f9f34fb67d.setContent(html_8eea3238c005277e9379a88128669f2e);
             
         
 
-        marker_7619363224316c1ca1d024ac22e9f5b5.bindPopup(popup_8ae0094cf0e58bed7848b0e6a0f07977)
+        marker_b137c7c61268e5041b263f8d3fe79551.bindPopup(popup_719f70193aaf3fd5f49c77f9f34fb67d)
         ;
 
         
     
     
-            marker_7619363224316c1ca1d024ac22e9f5b5.bindTooltip(
+            marker_b137c7c61268e5041b263f8d3fe79551.bindTooltip(
                 `<div>
                      1683 — 在焰火中化成一團焦黑
                  </div>`,
@@ -327,17 +250,17 @@
             );
         
     
-                marker_7619363224316c1ca1d024ac22e9f5b5.setIcon(icon_38be5f23aae6e7915de430bcf5ce4f04);
+                marker_b137c7c61268e5041b263f8d3fe79551.setIcon(icon_14519aacf0d7d9abb9f535f8b650edfe);
             
     
-            var marker_6092311169f7348d8182fb401c4244f3 = L.marker(
+            var marker_e6bbf8a10dca16c712c1b0e1a4270a2a = L.marker(
                 [44.4598426, 8.6865303],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_96ace813d53dfd6c09948c4363027842 = L.AwesomeMarkers.icon(
+            var icon_903a8b4b8acd726520bf444d3e1d1912 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkgreen",
   "iconColor": "white",
@@ -348,24 +271,24 @@
             );
         
     
-        var popup_1663eefc48f22718c14603f1e03a9031 = L.popup({
+        var popup_cc06c7a8987402df8b214f8730c8564c = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_baef6ad23490cb6a5e202fae559d9f03 = $(`<div id="html_baef6ad23490cb6a5e202fae559d9f03" style="width: 100.0%; height: 100.0%;"><a href="details/1694.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_1663eefc48f22718c14603f1e03a9031.setContent(html_baef6ad23490cb6a5e202fae559d9f03);
+                var html_d8dbe6a7cd8a82afcf095eb05b052a3a = $(`<div id="html_d8dbe6a7cd8a82afcf095eb05b052a3a" style="width: 100.0%; height: 100.0%;"><a href="details/1694.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_cc06c7a8987402df8b214f8730c8564c.setContent(html_d8dbe6a7cd8a82afcf095eb05b052a3a);
             
         
 
-        marker_6092311169f7348d8182fb401c4244f3.bindPopup(popup_1663eefc48f22718c14603f1e03a9031)
+        marker_e6bbf8a10dca16c712c1b0e1a4270a2a.bindPopup(popup_cc06c7a8987402df8b214f8730c8564c)
         ;
 
         
     
     
-            marker_6092311169f7348d8182fb401c4244f3.bindTooltip(
+            marker_e6bbf8a10dca16c712c1b0e1a4270a2a.bindTooltip(
                 `<div>
                      1694 — 不如沉到海底
                  </div>`,
@@ -375,17 +298,17 @@
             );
         
     
-                marker_6092311169f7348d8182fb401c4244f3.setIcon(icon_96ace813d53dfd6c09948c4363027842);
+                marker_e6bbf8a10dca16c712c1b0e1a4270a2a.setIcon(icon_903a8b4b8acd726520bf444d3e1d1912);
             
     
-            var marker_b12695b67dd3ad504a50f1e529ccc368 = L.marker(
+            var marker_ed432157b4207831093078da8715140a = L.marker(
                 [48.078136, 7.357927],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_96a623eceec6242475eb07a07a71cb74 = L.AwesomeMarkers.icon(
+            var icon_ba9733c906e7d46424493cbc8194f85e = L.AwesomeMarkers.icon(
                 {
   "markerColor": "beige",
   "iconColor": "white",
@@ -396,24 +319,24 @@
             );
         
     
-        var popup_33d64022f708cda500af61052566cc29 = L.popup({
+        var popup_b1da318748e15ec4ba8792737836b78f = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_bfef054f74b34a930f6ef310a937b7e6 = $(`<div id="html_bfef054f74b34a930f6ef310a937b7e6" style="width: 100.0%; height: 100.0%;"><a href="details/1725.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_33d64022f708cda500af61052566cc29.setContent(html_bfef054f74b34a930f6ef310a937b7e6);
+                var html_0b97ee71bf60928e865924be05b17c90 = $(`<div id="html_0b97ee71bf60928e865924be05b17c90" style="width: 100.0%; height: 100.0%;"><a href="details/1725.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_b1da318748e15ec4ba8792737836b78f.setContent(html_0b97ee71bf60928e865924be05b17c90);
             
         
 
-        marker_b12695b67dd3ad504a50f1e529ccc368.bindPopup(popup_33d64022f708cda500af61052566cc29)
+        marker_ed432157b4207831093078da8715140a.bindPopup(popup_b1da318748e15ec4ba8792737836b78f)
         ;
 
         
     
     
-            marker_b12695b67dd3ad504a50f1e529ccc368.bindTooltip(
+            marker_ed432157b4207831093078da8715140a.bindTooltip(
                 `<div>
                      1725 — 他一直待在閣樓看著窗外
                  </div>`,
@@ -423,17 +346,17 @@
             );
         
     
-                marker_b12695b67dd3ad504a50f1e529ccc368.setIcon(icon_96a623eceec6242475eb07a07a71cb74);
+                marker_ed432157b4207831093078da8715140a.setIcon(icon_ba9733c906e7d46424493cbc8194f85e);
             
     
-            var marker_41bbb2c0dea3451d7f7fa4d4b71cf43a = L.marker(
+            var marker_3b41ca924a50e3c5d868560a6f226db0 = L.marker(
                 [38.7084, -9.1378],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_5611ac26f4b461df44db00211467eecd = L.AwesomeMarkers.icon(
+            var icon_0661da631ed45f4c1565e95438da4eec = L.AwesomeMarkers.icon(
                 {
   "markerColor": "beige",
   "iconColor": "white",
@@ -444,24 +367,24 @@
             );
         
     
-        var popup_3f909e250174f34a14df71c31cc11387 = L.popup({
+        var popup_7384c1ccb1eacaeb8e2d2a63b22fea1f = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_dcfb8b4da90499c7ccead1e09cfca248 = $(`<div id="html_dcfb8b4da90499c7ccead1e09cfca248" style="width: 100.0%; height: 100.0%;"><a href="details/1728.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_3f909e250174f34a14df71c31cc11387.setContent(html_dcfb8b4da90499c7ccead1e09cfca248);
+                var html_233be2d76f92e935015a7a26f376f96d = $(`<div id="html_233be2d76f92e935015a7a26f376f96d" style="width: 100.0%; height: 100.0%;"><a href="details/1728.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_7384c1ccb1eacaeb8e2d2a63b22fea1f.setContent(html_233be2d76f92e935015a7a26f376f96d);
             
         
 
-        marker_41bbb2c0dea3451d7f7fa4d4b71cf43a.bindPopup(popup_3f909e250174f34a14df71c31cc11387)
+        marker_3b41ca924a50e3c5d868560a6f226db0.bindPopup(popup_7384c1ccb1eacaeb8e2d2a63b22fea1f)
         ;
 
         
     
     
-            marker_41bbb2c0dea3451d7f7fa4d4b71cf43a.bindTooltip(
+            marker_3b41ca924a50e3c5d868560a6f226db0.bindTooltip(
                 `<div>
                      1728 — 那個英國人接手了他
                  </div>`,
@@ -471,17 +394,17 @@
             );
         
     
-                marker_41bbb2c0dea3451d7f7fa4d4b71cf43a.setIcon(icon_5611ac26f4b461df44db00211467eecd);
+                marker_3b41ca924a50e3c5d868560a6f226db0.setIcon(icon_0661da631ed45f4c1565e95438da4eec);
             
     
-            var marker_9988a8ff9baf567d979325bd7c1205ae = L.marker(
+            var marker_efeefa30afe8ea38fe46d3b2dfc908f1 = L.marker(
                 [51.3694, -2.3428],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_4d49135b40ee3f34aabf8906a5762a42 = L.AwesomeMarkers.icon(
+            var icon_8868b019f81c9f985286816d18961d1c = L.AwesomeMarkers.icon(
                 {
   "markerColor": "beige",
   "iconColor": "white",
@@ -492,24 +415,24 @@
             );
         
     
-        var popup_7d8a9004c81a78af4ca54ee13eb97a30 = L.popup({
+        var popup_bd275539b82ec69d2bed1bda7d3d1b96 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_509def9750a086645a9f049127c05893 = $(`<div id="html_509def9750a086645a9f049127c05893" style="width: 100.0%; height: 100.0%;"><a href="details/1763.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_7d8a9004c81a78af4ca54ee13eb97a30.setContent(html_509def9750a086645a9f049127c05893);
+                var html_95d2305dfa71edf6ef83101040e54bac = $(`<div id="html_95d2305dfa71edf6ef83101040e54bac" style="width: 100.0%; height: 100.0%;"><a href="details/1763.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_bd275539b82ec69d2bed1bda7d3d1b96.setContent(html_95d2305dfa71edf6ef83101040e54bac);
             
         
 
-        marker_9988a8ff9baf567d979325bd7c1205ae.bindPopup(popup_7d8a9004c81a78af4ca54ee13eb97a30)
+        marker_efeefa30afe8ea38fe46d3b2dfc908f1.bindPopup(popup_bd275539b82ec69d2bed1bda7d3d1b96)
         ;
 
         
     
     
-            marker_9988a8ff9baf567d979325bd7c1205ae.bindTooltip(
+            marker_efeefa30afe8ea38fe46d3b2dfc908f1.bindTooltip(
                 `<div>
                      1763 — 應當明白無法獲得救贖
                  </div>`,
@@ -519,17 +442,17 @@
             );
         
     
-                marker_9988a8ff9baf567d979325bd7c1205ae.setIcon(icon_4d49135b40ee3f34aabf8906a5762a42);
+                marker_efeefa30afe8ea38fe46d3b2dfc908f1.setIcon(icon_8868b019f81c9f985286816d18961d1c);
             
     
-            var marker_c6bc304a374aff46736e309c221f9129 = L.marker(
+            var marker_3620d52affbd0cccbf73236394f06f44 = L.marker(
                 [51.5205, -0.1227],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_453db0a601f214fa533a68c33d897ad3 = L.AwesomeMarkers.icon(
+            var icon_22e4b917713c59e3ef51a38a50efd8ba = L.AwesomeMarkers.icon(
                 {
   "markerColor": "beige",
   "iconColor": "white",
@@ -540,24 +463,24 @@
             );
         
     
-        var popup_4c31150e63635b7fa772196f469aa651 = L.popup({
+        var popup_4b558006a171a3fc5d5dfdd5dfd273a1 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_06074f039737e9158aa858479753ab7f = $(`<div id="html_06074f039737e9158aa858479753ab7f" style="width: 100.0%; height: 100.0%;"><a href="details/1770_1.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_4c31150e63635b7fa772196f469aa651.setContent(html_06074f039737e9158aa858479753ab7f);
+                var html_d3efb84f375bc519f87079f967534135 = $(`<div id="html_d3efb84f375bc519f87079f967534135" style="width: 100.0%; height: 100.0%;"><a href="details/1770_1.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_4b558006a171a3fc5d5dfdd5dfd273a1.setContent(html_d3efb84f375bc519f87079f967534135);
             
         
 
-        marker_c6bc304a374aff46736e309c221f9129.bindPopup(popup_4c31150e63635b7fa772196f469aa651)
+        marker_3620d52affbd0cccbf73236394f06f44.bindPopup(popup_4b558006a171a3fc5d5dfdd5dfd273a1)
         ;
 
         
     
     
-            marker_c6bc304a374aff46736e309c221f9129.bindTooltip(
+            marker_3620d52affbd0cccbf73236394f06f44.bindTooltip(
                 `<div>
                      1770 — 為醫學做出貢獻？
                  </div>`,
@@ -567,17 +490,17 @@
             );
         
     
-                marker_c6bc304a374aff46736e309c221f9129.setIcon(icon_453db0a601f214fa533a68c33d897ad3);
+                marker_3620d52affbd0cccbf73236394f06f44.setIcon(icon_22e4b917713c59e3ef51a38a50efd8ba);
             
     
-            var marker_37169040139065b51a358321367703bd = L.marker(
+            var marker_6ba66dcdfa1d376f7df588de9edff00d = L.marker(
                 [39.9526, -75.1652],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_a0d34cc593e20935cfb79ee1336b9aab = L.AwesomeMarkers.icon(
+            var icon_e9e7ff44fe17740116f2c3847be70463 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "beige",
   "iconColor": "white",
@@ -588,24 +511,24 @@
             );
         
     
-        var popup_dc6739d6021e7dd612fe61f2b0fe85cb = L.popup({
+        var popup_5721fac2d95a073cd9b27ac7ae5126f5 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_298498a30dd0bc1bcc51791351451e00 = $(`<div id="html_298498a30dd0bc1bcc51791351451e00" style="width: 100.0%; height: 100.0%;"><a href="details/1770_2.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_dc6739d6021e7dd612fe61f2b0fe85cb.setContent(html_298498a30dd0bc1bcc51791351451e00);
+                var html_37b7b6c91862f718b358ded3d9348033 = $(`<div id="html_37b7b6c91862f718b358ded3d9348033" style="width: 100.0%; height: 100.0%;"><a href="details/1770_2.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_5721fac2d95a073cd9b27ac7ae5126f5.setContent(html_37b7b6c91862f718b358ded3d9348033);
             
         
 
-        marker_37169040139065b51a358321367703bd.bindPopup(popup_dc6739d6021e7dd612fe61f2b0fe85cb)
+        marker_6ba66dcdfa1d376f7df588de9edff00d.bindPopup(popup_5721fac2d95a073cd9b27ac7ae5126f5)
         ;
 
         
     
     
-            marker_37169040139065b51a358321367703bd.bindTooltip(
+            marker_6ba66dcdfa1d376f7df588de9edff00d.bindTooltip(
                 `<div>
                      1770 — 被支解帶往大洋彼岸
                  </div>`,
@@ -615,17 +538,17 @@
             );
         
     
-                marker_37169040139065b51a358321367703bd.setIcon(icon_a0d34cc593e20935cfb79ee1336b9aab);
+                marker_6ba66dcdfa1d376f7df588de9edff00d.setIcon(icon_e9e7ff44fe17740116f2c3847be70463);
             
     
-            var marker_061d6429278d5588b450ed216437dd9a = L.marker(
+            var marker_0e0a54cdf8f9445232b49cf2f3415a33 = L.marker(
                 [39.1031, -84.512],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_8945e2ed7065ac79cc1cf33707c898c2 = L.AwesomeMarkers.icon(
+            var icon_1347f908ab3bb502d8d6e5d03eb8a297 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "beige",
   "iconColor": "white",
@@ -636,24 +559,24 @@
             );
         
     
-        var popup_1e4a257f3cd0a3dee07f5eeb6f3d0ffe = L.popup({
+        var popup_09d895033097b2dee6a5c8651d021720 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_0df8d3fc134826a66db654a81d1341bd = $(`<div id="html_0df8d3fc134826a66db654a81d1341bd" style="width: 100.0%; height: 100.0%;"><a href="details/1780.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_1e4a257f3cd0a3dee07f5eeb6f3d0ffe.setContent(html_0df8d3fc134826a66db654a81d1341bd);
+                var html_a9b01083f52d422dfded4b38b8a73f42 = $(`<div id="html_a9b01083f52d422dfded4b38b8a73f42" style="width: 100.0%; height: 100.0%;"><a href="details/1780.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_09d895033097b2dee6a5c8651d021720.setContent(html_a9b01083f52d422dfded4b38b8a73f42);
             
         
 
-        marker_061d6429278d5588b450ed216437dd9a.bindPopup(popup_1e4a257f3cd0a3dee07f5eeb6f3d0ffe)
+        marker_0e0a54cdf8f9445232b49cf2f3415a33.bindPopup(popup_09d895033097b2dee6a5c8651d021720)
         ;
 
         
     
     
-            marker_061d6429278d5588b450ed216437dd9a.bindTooltip(
+            marker_0e0a54cdf8f9445232b49cf2f3415a33.bindTooltip(
                 `<div>
                      1780 — 這份餽贈他想延續下去
                  </div>`,
@@ -663,17 +586,17 @@
             );
         
     
-                marker_061d6429278d5588b450ed216437dd9a.setIcon(icon_8945e2ed7065ac79cc1cf33707c898c2);
+                marker_0e0a54cdf8f9445232b49cf2f3415a33.setIcon(icon_1347f908ab3bb502d8d6e5d03eb8a297);
             
     
-            var marker_2ffef1cd11a315fd6858f78256ece6e6 = L.marker(
+            var marker_6ab4bed2a4e4b9b1b6b513009a6bf7a3 = L.marker(
                 [42.1814979, -89.1351954],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_84c334e7fd126060e2461252c2fb7fea = L.AwesomeMarkers.icon(
+            var icon_ff315c4cc1c19fa3da19c5a583934bda = L.AwesomeMarkers.icon(
                 {
   "markerColor": "beige",
   "iconColor": "white",
@@ -684,24 +607,24 @@
             );
         
     
-        var popup_c3548abe4f2d94caa2250115d21781a6 = L.popup({
+        var popup_6518bcd7921e9746cd5f3b8a9cb1af56 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_f845ef389d511619c9d9ba14addb1bf3 = $(`<div id="html_f845ef389d511619c9d9ba14addb1bf3" style="width: 100.0%; height: 100.0%;"><a href="details/1810.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_c3548abe4f2d94caa2250115d21781a6.setContent(html_f845ef389d511619c9d9ba14addb1bf3);
+                var html_7e210602db951a8d49467cec4ff7ad04 = $(`<div id="html_7e210602db951a8d49467cec4ff7ad04" style="width: 100.0%; height: 100.0%;"><a href="details/1810.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_6518bcd7921e9746cd5f3b8a9cb1af56.setContent(html_7e210602db951a8d49467cec4ff7ad04);
             
         
 
-        marker_2ffef1cd11a315fd6858f78256ece6e6.bindPopup(popup_c3548abe4f2d94caa2250115d21781a6)
+        marker_6ab4bed2a4e4b9b1b6b513009a6bf7a3.bindPopup(popup_6518bcd7921e9746cd5f3b8a9cb1af56)
         ;
 
         
     
     
-            marker_2ffef1cd11a315fd6858f78256ece6e6.bindTooltip(
+            marker_6ab4bed2a4e4b9b1b6b513009a6bf7a3.bindTooltip(
                 `<div>
                      1810 — 這段時間如同夢境
                  </div>`,
@@ -711,17 +634,17 @@
             );
         
     
-                marker_2ffef1cd11a315fd6858f78256ece6e6.setIcon(icon_84c334e7fd126060e2461252c2fb7fea);
+                marker_6ab4bed2a4e4b9b1b6b513009a6bf7a3.setIcon(icon_ff315c4cc1c19fa3da19c5a583934bda);
             
     
-            var marker_df592840071aef6af3a9a6c963c2e6b0 = L.marker(
+            var marker_440d4afcd0066db9538ca0355e9a3cd7 = L.marker(
                 [42.181371, -89.134199],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_fbaa461f270cb38e32cbb9b1a9f46882 = L.AwesomeMarkers.icon(
+            var icon_a13929305a21b149821df69759b884a0 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkgreen",
   "iconColor": "white",
@@ -732,24 +655,24 @@
             );
         
     
-        var popup_3ca14899642958d23cbeab3c283c3da9 = L.popup({
+        var popup_7edb36ddb58b1f305f5422773b566f05 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_7f49ecb0a2554c7300e2b545312484e6 = $(`<div id="html_7f49ecb0a2554c7300e2b545312484e6" style="width: 100.0%; height: 100.0%;"><a href="details/novel_1.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_3ca14899642958d23cbeab3c283c3da9.setContent(html_7f49ecb0a2554c7300e2b545312484e6);
+                var html_59dc05cd1a6aef5722cf345f1d119c5c = $(`<div id="html_59dc05cd1a6aef5722cf345f1d119c5c" style="width: 100.0%; height: 100.0%;"><a href="details/novel_1.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_7edb36ddb58b1f305f5422773b566f05.setContent(html_59dc05cd1a6aef5722cf345f1d119c5c);
             
         
 
-        marker_df592840071aef6af3a9a6c963c2e6b0.bindPopup(popup_3ca14899642958d23cbeab3c283c3da9)
+        marker_440d4afcd0066db9538ca0355e9a3cd7.bindPopup(popup_7edb36ddb58b1f305f5422773b566f05)
         ;
 
         
     
     
-            marker_df592840071aef6af3a9a6c963c2e6b0.bindTooltip(
+            marker_440d4afcd0066db9538ca0355e9a3cd7.bindTooltip(
                 `<div>
                      1820 — C大調
                  </div>`,
@@ -759,17 +682,17 @@
             );
         
     
-                marker_df592840071aef6af3a9a6c963c2e6b0.setIcon(icon_fbaa461f270cb38e32cbb9b1a9f46882);
+                marker_440d4afcd0066db9538ca0355e9a3cd7.setIcon(icon_a13929305a21b149821df69759b884a0);
             
     
-            var marker_55e9d734b3859fd361b3635a36e5d620 = L.marker(
+            var marker_aa9bbb42e73169d3b647349977015313 = L.marker(
                 [32.3527, -90.8779],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_12b90f684bb4d62b26b1279bd65df435 = L.AwesomeMarkers.icon(
+            var icon_17bb72d6ef78e85168649781be923e37 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkgreen",
   "iconColor": "white",
@@ -780,24 +703,24 @@
             );
         
     
-        var popup_f1518d608a7f945eacb834831a5badbc = L.popup({
+        var popup_2a461991d427a57aa6c107a32d9a98dd = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_85f68bc7b1c4892537829ab8c6cbf2e6 = $(`<div id="html_85f68bc7b1c4892537829ab8c6cbf2e6" style="width: 100.0%; height: 100.0%;"><a href="details/novel_2.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_f1518d608a7f945eacb834831a5badbc.setContent(html_85f68bc7b1c4892537829ab8c6cbf2e6);
+                var html_a0bbe960d7d1fa7a899b3d6d94aade3e = $(`<div id="html_a0bbe960d7d1fa7a899b3d6d94aade3e" style="width: 100.0%; height: 100.0%;"><a href="details/novel_2.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_2a461991d427a57aa6c107a32d9a98dd.setContent(html_a0bbe960d7d1fa7a899b3d6d94aade3e);
             
         
 
-        marker_55e9d734b3859fd361b3635a36e5d620.bindPopup(popup_f1518d608a7f945eacb834831a5badbc)
+        marker_aa9bbb42e73169d3b647349977015313.bindPopup(popup_2a461991d427a57aa6c107a32d9a98dd)
         ;
 
         
     
     
-            marker_55e9d734b3859fd361b3635a36e5d620.bindTooltip(
+            marker_aa9bbb42e73169d3b647349977015313.bindTooltip(
                 `<div>
                      1851 — 餘燼
                  </div>`,
@@ -807,17 +730,17 @@
             );
         
     
-                marker_55e9d734b3859fd361b3635a36e5d620.setIcon(icon_12b90f684bb4d62b26b1279bd65df435);
+                marker_aa9bbb42e73169d3b647349977015313.setIcon(icon_17bb72d6ef78e85168649781be923e37);
             
     
-            var marker_01d2d003f5221a6ef6d39d2a651e845e = L.marker(
+            var marker_669e02023486e9824b870b0d1972c0ca = L.marker(
                 [42.273119, -89.090549],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_820c59e637ab74a05bf5f1b4924836b2 = L.AwesomeMarkers.icon(
+            var icon_82ec5ac836c8d872dd237e2334cefc56 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkgreen",
   "iconColor": "white",
@@ -828,24 +751,24 @@
             );
         
     
-        var popup_6762085d432ee248b1d5b66b744307ac = L.popup({
+        var popup_d15c2a09b46608c810cce34ccd2d7c56 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_c519a08a405e391bc973dd02a963398d = $(`<div id="html_c519a08a405e391bc973dd02a963398d" style="width: 100.0%; height: 100.0%;"><a href="details/novel_3.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_6762085d432ee248b1d5b66b744307ac.setContent(html_c519a08a405e391bc973dd02a963398d);
+                var html_a718aa4a19506654634a05395e930e0a = $(`<div id="html_a718aa4a19506654634a05395e930e0a" style="width: 100.0%; height: 100.0%;"><a href="details/novel_3.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_d15c2a09b46608c810cce34ccd2d7c56.setContent(html_a718aa4a19506654634a05395e930e0a);
             
         
 
-        marker_01d2d003f5221a6ef6d39d2a651e845e.bindPopup(popup_6762085d432ee248b1d5b66b744307ac)
+        marker_669e02023486e9824b870b0d1972c0ca.bindPopup(popup_d15c2a09b46608c810cce34ccd2d7c56)
         ;
 
         
     
     
-            marker_01d2d003f5221a6ef6d39d2a651e845e.bindTooltip(
+            marker_669e02023486e9824b870b0d1972c0ca.bindTooltip(
                 `<div>
                      1852 — 詞彙
                  </div>`,
@@ -855,17 +778,17 @@
             );
         
     
-                marker_01d2d003f5221a6ef6d39d2a651e845e.setIcon(icon_820c59e637ab74a05bf5f1b4924836b2);
+                marker_669e02023486e9824b870b0d1972c0ca.setIcon(icon_82ec5ac836c8d872dd237e2334cefc56);
             
     
-            var marker_db9bfc917d37e487f17981860ab103e7 = L.marker(
+            var marker_d99efa8564c7e97aeb57e97039ff81ab = L.marker(
                 [42.167316, -89.144168],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_632ca03ff26ff1a28f97a89f2b21290c = L.AwesomeMarkers.icon(
+            var icon_90b8af51838dc36d27b8abbd98ecc3ec = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkgreen",
   "iconColor": "white",
@@ -876,24 +799,24 @@
             );
         
     
-        var popup_c9f6a36af963d246a63f13ae739bc357 = L.popup({
+        var popup_f98e4a39bc119bd11ee76dc8a9f8ded8 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_9f3d578bee8e1766f13e13ffcabfb631 = $(`<div id="html_9f3d578bee8e1766f13e13ffcabfb631" style="width: 100.0%; height: 100.0%;"><a href="details/novel_4.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_c9f6a36af963d246a63f13ae739bc357.setContent(html_9f3d578bee8e1766f13e13ffcabfb631);
+                var html_001a748a2fc975888bc6f7f7b4dd5b18 = $(`<div id="html_001a748a2fc975888bc6f7f7b4dd5b18" style="width: 100.0%; height: 100.0%;"><a href="details/novel_4.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_f98e4a39bc119bd11ee76dc8a9f8ded8.setContent(html_001a748a2fc975888bc6f7f7b4dd5b18);
             
         
 
-        marker_db9bfc917d37e487f17981860ab103e7.bindPopup(popup_c9f6a36af963d246a63f13ae739bc357)
+        marker_d99efa8564c7e97aeb57e97039ff81ab.bindPopup(popup_f98e4a39bc119bd11ee76dc8a9f8ded8)
         ;
 
         
     
     
-            marker_db9bfc917d37e487f17981860ab103e7.bindTooltip(
+            marker_d99efa8564c7e97aeb57e97039ff81ab.bindTooltip(
                 `<div>
                      1856 — 惡夢
                  </div>`,
@@ -903,17 +826,17 @@
             );
         
     
-                marker_db9bfc917d37e487f17981860ab103e7.setIcon(icon_632ca03ff26ff1a28f97a89f2b21290c);
+                marker_d99efa8564c7e97aeb57e97039ff81ab.setIcon(icon_90b8af51838dc36d27b8abbd98ecc3ec);
             
     
-            var marker_a3b2b2079e379d5ec9ae2bfa57543100 = L.marker(
+            var marker_d89697593037493be29292fd02aae9ad = L.marker(
                 [42.271262, -89.093659],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_a9cf0c8630ac13a915e66d90acd19a45 = L.AwesomeMarkers.icon(
+            var icon_2ddf4a16b2945c6d94b06ff98d1c1aaa = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkgreen",
   "iconColor": "white",
@@ -924,24 +847,24 @@
             );
         
     
-        var popup_a759707530ec11ba7c3dec55547166f0 = L.popup({
+        var popup_17b38bfd4024c01074f3d96fafe44a89 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_d8cc66e5d1202c3dd29e27285ae28449 = $(`<div id="html_d8cc66e5d1202c3dd29e27285ae28449" style="width: 100.0%; height: 100.0%;"><a href="details/novel_5.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_a759707530ec11ba7c3dec55547166f0.setContent(html_d8cc66e5d1202c3dd29e27285ae28449);
+                var html_ee288a22c653bcbfd600b81b9ea6d433 = $(`<div id="html_ee288a22c653bcbfd600b81b9ea6d433" style="width: 100.0%; height: 100.0%;"><a href="details/novel_5.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_17b38bfd4024c01074f3d96fafe44a89.setContent(html_ee288a22c653bcbfd600b81b9ea6d433);
             
         
 
-        marker_a3b2b2079e379d5ec9ae2bfa57543100.bindPopup(popup_a759707530ec11ba7c3dec55547166f0)
+        marker_d89697593037493be29292fd02aae9ad.bindPopup(popup_17b38bfd4024c01074f3d96fafe44a89)
         ;
 
         
     
     
-            marker_a3b2b2079e379d5ec9ae2bfa57543100.bindTooltip(
+            marker_d89697593037493be29292fd02aae9ad.bindTooltip(
                 `<div>
                      1860 — 奇蹟
                  </div>`,
@@ -951,17 +874,17 @@
             );
         
     
-                marker_a3b2b2079e379d5ec9ae2bfa57543100.setIcon(icon_a9cf0c8630ac13a915e66d90acd19a45);
+                marker_d89697593037493be29292fd02aae9ad.setIcon(icon_2ddf4a16b2945c6d94b06ff98d1c1aaa);
             
     
-            var marker_0e380ab0bf3816bef8926a82f20b4f03 = L.marker(
+            var marker_d30eccc2024588d9c7b7b74aa6a72f85 = L.marker(
                 [42.27156, -89.092942],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_31842c1139a3c6e62e9846080e7f270e = L.AwesomeMarkers.icon(
+            var icon_05b59b888a1b7dcb9c3859cef2edd281 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkgreen",
   "iconColor": "white",
@@ -972,24 +895,24 @@
             );
         
     
-        var popup_070263a3c6fcac5351b2f4fb21b28955 = L.popup({
+        var popup_daeeeca3e3cfef0ff95543ff5cb08c74 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_1bdce8aec2609754992ab565931d89ba = $(`<div id="html_1bdce8aec2609754992ab565931d89ba" style="width: 100.0%; height: 100.0%;"><a href="details/novel_6.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_070263a3c6fcac5351b2f4fb21b28955.setContent(html_1bdce8aec2609754992ab565931d89ba);
+                var html_3458117f927c3fb129237919d4b31a83 = $(`<div id="html_3458117f927c3fb129237919d4b31a83" style="width: 100.0%; height: 100.0%;"><a href="details/novel_6.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_daeeeca3e3cfef0ff95543ff5cb08c74.setContent(html_3458117f927c3fb129237919d4b31a83);
             
         
 
-        marker_0e380ab0bf3816bef8926a82f20b4f03.bindPopup(popup_070263a3c6fcac5351b2f4fb21b28955)
+        marker_d30eccc2024588d9c7b7b74aa6a72f85.bindPopup(popup_daeeeca3e3cfef0ff95543ff5cb08c74)
         ;
 
         
     
     
-            marker_0e380ab0bf3816bef8926a82f20b4f03.bindTooltip(
+            marker_d30eccc2024588d9c7b7b74aa6a72f85.bindTooltip(
                 `<div>
                      2024/1860 — 光秒
                  </div>`,
@@ -999,17 +922,17 @@
             );
         
     
-                marker_0e380ab0bf3816bef8926a82f20b4f03.setIcon(icon_31842c1139a3c6e62e9846080e7f270e);
+                marker_d30eccc2024588d9c7b7b74aa6a72f85.setIcon(icon_05b59b888a1b7dcb9c3859cef2edd281);
             
     
-            var marker_e8ceeab8c060588a21d3f89e54ebd1fd = L.marker(
+            var marker_c1e44531949319af7a9eb1b1c1116b8e = L.marker(
                 [42.2714835, -89.0922337],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_6b041383bead5805614104891c0331cb = L.AwesomeMarkers.icon(
+            var icon_2f6bf2be772a5022280310f9e10520e6 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkpurple",
   "iconColor": "white",
@@ -1020,24 +943,24 @@
             );
         
     
-        var popup_bbc286b4f3fe8b764cba6df63914cafb = L.popup({
+        var popup_dd3f5b6b9d163a6b7bb0221c624d28b7 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_72767e80d188435319fbe34595b4caf2 = $(`<div id="html_72767e80d188435319fbe34595b4caf2" style="width: 100.0%; height: 100.0%;"><a href="details/1866.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_bbc286b4f3fe8b764cba6df63914cafb.setContent(html_72767e80d188435319fbe34595b4caf2);
+                var html_30764d8eac9d9e22a2a949bab0ced699 = $(`<div id="html_30764d8eac9d9e22a2a949bab0ced699" style="width: 100.0%; height: 100.0%;"><a href="details/1866.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_dd3f5b6b9d163a6b7bb0221c624d28b7.setContent(html_30764d8eac9d9e22a2a949bab0ced699);
             
         
 
-        marker_e8ceeab8c060588a21d3f89e54ebd1fd.bindPopup(popup_bbc286b4f3fe8b764cba6df63914cafb)
+        marker_c1e44531949319af7a9eb1b1c1116b8e.bindPopup(popup_dd3f5b6b9d163a6b7bb0221c624d28b7)
         ;
 
         
     
     
-            marker_e8ceeab8c060588a21d3f89e54ebd1fd.bindTooltip(
+            marker_c1e44531949319af7a9eb1b1c1116b8e.bindTooltip(
                 `<div>
                      1866 — 六則新聞
                  </div>`,
@@ -1047,17 +970,17 @@
             );
         
     
-                marker_e8ceeab8c060588a21d3f89e54ebd1fd.setIcon(icon_6b041383bead5805614104891c0331cb);
+                marker_c1e44531949319af7a9eb1b1c1116b8e.setIcon(icon_2f6bf2be772a5022280310f9e10520e6);
             
     
-            var marker_d5555df4b4c5a7409dd54cc6b6b2a051 = L.marker(
+            var marker_c4fad3d5a42f5931b7782e660910c085 = L.marker(
                 [34.04393, -118.24771],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_cfaee64c8d481af8928822b8fdbaa99c = L.AwesomeMarkers.icon(
+            var icon_e34359f742d56e45a1c5d1fca1cd9c4f = L.AwesomeMarkers.icon(
                 {
   "markerColor": "beige",
   "iconColor": "white",
@@ -1068,24 +991,24 @@
             );
         
     
-        var popup_dde5d06e28bcb196dcf7b1c79b63fb36 = L.popup({
+        var popup_4f4949bb70860cbaf482ec57fc34555d = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_4575dcfb419758d47ed925f0aebdf356 = $(`<div id="html_4575dcfb419758d47ed925f0aebdf356" style="width: 100.0%; height: 100.0%;"><a href="details/2010.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_dde5d06e28bcb196dcf7b1c79b63fb36.setContent(html_4575dcfb419758d47ed925f0aebdf356);
+                var html_91eb83852a45cfa67b09e23fcfa45a89 = $(`<div id="html_91eb83852a45cfa67b09e23fcfa45a89" style="width: 100.0%; height: 100.0%;"><a href="details/2010.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_4f4949bb70860cbaf482ec57fc34555d.setContent(html_91eb83852a45cfa67b09e23fcfa45a89);
             
         
 
-        marker_d5555df4b4c5a7409dd54cc6b6b2a051.bindPopup(popup_dde5d06e28bcb196dcf7b1c79b63fb36)
+        marker_c4fad3d5a42f5931b7782e660910c085.bindPopup(popup_4f4949bb70860cbaf482ec57fc34555d)
         ;
 
         
     
     
-            marker_d5555df4b4c5a7409dd54cc6b6b2a051.bindTooltip(
+            marker_c4fad3d5a42f5931b7782e660910c085.bindTooltip(
                 `<div>
                      2010 — 狩獵月
                  </div>`,
@@ -1095,17 +1018,17 @@
             );
         
     
-                marker_d5555df4b4c5a7409dd54cc6b6b2a051.setIcon(icon_cfaee64c8d481af8928822b8fdbaa99c);
+                marker_c4fad3d5a42f5931b7782e660910c085.setIcon(icon_e34359f742d56e45a1c5d1fca1cd9c4f);
             
     
-            var marker_61dfdeefeb1a179e160270675a703c4f = L.marker(
+            var marker_712494e54334658808d3763e66e33592 = L.marker(
                 [34.051488, -118.255144],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_51997156febc14490cee0443a6da0cac = L.AwesomeMarkers.icon(
+            var icon_08c5aa839e9da9c5d4c4ac24e6a89e18 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "beige",
   "iconColor": "white",
@@ -1116,24 +1039,24 @@
             );
         
     
-        var popup_bd2753e31fda3df985f17ecb96f12951 = L.popup({
+        var popup_e0b67e2ab5ec2df86d89251bc2b112fa = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_b89ede93e1761d3176e22d83d15513b7 = $(`<div id="html_b89ede93e1761d3176e22d83d15513b7" style="width: 100.0%; height: 100.0%;"><a href="details/2011.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_bd2753e31fda3df985f17ecb96f12951.setContent(html_b89ede93e1761d3176e22d83d15513b7);
+                var html_3b30053aebd8e8e8e500fe3cd0bd034a = $(`<div id="html_3b30053aebd8e8e8e500fe3cd0bd034a" style="width: 100.0%; height: 100.0%;"><a href="details/2011.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_e0b67e2ab5ec2df86d89251bc2b112fa.setContent(html_3b30053aebd8e8e8e500fe3cd0bd034a);
             
         
 
-        marker_61dfdeefeb1a179e160270675a703c4f.bindPopup(popup_bd2753e31fda3df985f17ecb96f12951)
+        marker_712494e54334658808d3763e66e33592.bindPopup(popup_e0b67e2ab5ec2df86d89251bc2b112fa)
         ;
 
         
     
     
-            marker_61dfdeefeb1a179e160270675a703c4f.bindTooltip(
+            marker_712494e54334658808d3763e66e33592.bindTooltip(
                 `<div>
                      2011 — 鳴門骨
                  </div>`,
@@ -1143,17 +1066,17 @@
             );
         
     
-                marker_61dfdeefeb1a179e160270675a703c4f.setIcon(icon_51997156febc14490cee0443a6da0cac);
+                marker_712494e54334658808d3763e66e33592.setIcon(icon_08c5aa839e9da9c5d4c4ac24e6a89e18);
             
     
-            var marker_ca004016b9fdb546aec79aefaf7545d0 = L.marker(
+            var marker_fc28131db781dbf3563ee25926ee8449 = L.marker(
                 [48.416667, -123.389889],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_216ee5aa43971ca648509bea6d6ca245 = L.AwesomeMarkers.icon(
+            var icon_27a28dc1cd45d16ebf966746bbd1e53b = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkgreen",
   "iconColor": "white",
@@ -1164,24 +1087,24 @@
             );
         
     
-        var popup_9b13244408958cdb0924949aa1216723 = L.popup({
+        var popup_1b9de264ddca5aea0010cbd9fe5c051b = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_afb736a2e8ee51aeae1268914f7cabf7 = $(`<div id="html_afb736a2e8ee51aeae1268914f7cabf7" style="width: 100.0%; height: 100.0%;"><a href="details/novel_10.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_9b13244408958cdb0924949aa1216723.setContent(html_afb736a2e8ee51aeae1268914f7cabf7);
+                var html_1f8becbe325e69021d381d42febe0b34 = $(`<div id="html_1f8becbe325e69021d381d42febe0b34" style="width: 100.0%; height: 100.0%;"><a href="details/novel_10.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_1b9de264ddca5aea0010cbd9fe5c051b.setContent(html_1f8becbe325e69021d381d42febe0b34);
             
         
 
-        marker_ca004016b9fdb546aec79aefaf7545d0.bindPopup(popup_9b13244408958cdb0924949aa1216723)
+        marker_fc28131db781dbf3563ee25926ee8449.bindPopup(popup_1b9de264ddca5aea0010cbd9fe5c051b)
         ;
 
         
     
     
-            marker_ca004016b9fdb546aec79aefaf7545d0.bindTooltip(
+            marker_fc28131db781dbf3563ee25926ee8449.bindTooltip(
                 `<div>
                      2019 — 異客
                  </div>`,
@@ -1191,17 +1114,17 @@
             );
         
     
-                marker_ca004016b9fdb546aec79aefaf7545d0.setIcon(icon_216ee5aa43971ca648509bea6d6ca245);
+                marker_fc28131db781dbf3563ee25926ee8449.setIcon(icon_27a28dc1cd45d16ebf966746bbd1e53b);
             
     
-            var marker_0195d08ed11957f727271b7c4e7edcca = L.marker(
+            var marker_894bdbf682918ca520a4cd6bb58ed472 = L.marker(
                 [48.4399672, -123.3603505],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_0645a2828f5c410f0687d3dd5f05c31f = L.AwesomeMarkers.icon(
+            var icon_8ac4f892290ea4264027caa678ae9e9c = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkgreen",
   "iconColor": "white",
@@ -1212,24 +1135,24 @@
             );
         
     
-        var popup_df7391e919e55ba43fd452dd17e830cb = L.popup({
+        var popup_041a6bfeaba8743a05442788ef2e9b6b = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_819d7857084f3b0539a70ecf88b3dc15 = $(`<div id="html_819d7857084f3b0539a70ecf88b3dc15" style="width: 100.0%; height: 100.0%;"><a href="details/novel_9.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_df7391e919e55ba43fd452dd17e830cb.setContent(html_819d7857084f3b0539a70ecf88b3dc15);
+                var html_88403e2c83e907fadf8f02a88f7c898a = $(`<div id="html_88403e2c83e907fadf8f02a88f7c898a" style="width: 100.0%; height: 100.0%;"><a href="details/novel_9.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_041a6bfeaba8743a05442788ef2e9b6b.setContent(html_88403e2c83e907fadf8f02a88f7c898a);
             
         
 
-        marker_0195d08ed11957f727271b7c4e7edcca.bindPopup(popup_df7391e919e55ba43fd452dd17e830cb)
+        marker_894bdbf682918ca520a4cd6bb58ed472.bindPopup(popup_041a6bfeaba8743a05442788ef2e9b6b)
         ;
 
         
     
     
-            marker_0195d08ed11957f727271b7c4e7edcca.bindTooltip(
+            marker_894bdbf682918ca520a4cd6bb58ed472.bindTooltip(
                 `<div>
                      2022 — 男生宿舍二三事
                  </div>`,
@@ -1239,17 +1162,17 @@
             );
         
     
-                marker_0195d08ed11957f727271b7c4e7edcca.setIcon(icon_0645a2828f5c410f0687d3dd5f05c31f);
+                marker_894bdbf682918ca520a4cd6bb58ed472.setIcon(icon_8ac4f892290ea4264027caa678ae9e9c);
             
     
-            var marker_76d745d11da558a8ee54f371ebf7374e = L.marker(
+            var marker_a62f776d4344633aa43ad8e04fa4660e = L.marker(
                 [48.4215922, -123.3817973],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_f5cf6cf7ea691a7573c3c3c03df0c939 = L.AwesomeMarkers.icon(
+            var icon_f904b9ae078ed1a9f862f0260f9c6231 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkgreen",
   "iconColor": "white",
@@ -1260,24 +1183,24 @@
             );
         
     
-        var popup_191c2f8f64fd8aa550e918b613599b35 = L.popup({
+        var popup_50e0d3ec974211863ad5187c3f4ef5d8 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_64d6f648fec9c58fdfbe1e9a12d7758c = $(`<div id="html_64d6f648fec9c58fdfbe1e9a12d7758c" style="width: 100.0%; height: 100.0%;"><a href="details/novel_7.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_191c2f8f64fd8aa550e918b613599b35.setContent(html_64d6f648fec9c58fdfbe1e9a12d7758c);
+                var html_33e54f7e806d6a15e85ec42f62dd02ee = $(`<div id="html_33e54f7e806d6a15e85ec42f62dd02ee" style="width: 100.0%; height: 100.0%;"><a href="details/novel_7.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_50e0d3ec974211863ad5187c3f4ef5d8.setContent(html_33e54f7e806d6a15e85ec42f62dd02ee);
             
         
 
-        marker_76d745d11da558a8ee54f371ebf7374e.bindPopup(popup_191c2f8f64fd8aa550e918b613599b35)
+        marker_a62f776d4344633aa43ad8e04fa4660e.bindPopup(popup_50e0d3ec974211863ad5187c3f4ef5d8)
         ;
 
         
     
     
-            marker_76d745d11da558a8ee54f371ebf7374e.bindTooltip(
+            marker_a62f776d4344633aa43ad8e04fa4660e.bindTooltip(
                 `<div>
                      2023 — 紙娃娃
                  </div>`,
@@ -1287,17 +1210,17 @@
             );
         
     
-                marker_76d745d11da558a8ee54f371ebf7374e.setIcon(icon_f5cf6cf7ea691a7573c3c3c03df0c939);
+                marker_a62f776d4344633aa43ad8e04fa4660e.setIcon(icon_f904b9ae078ed1a9f862f0260f9c6231);
             
     
-            var marker_180ac2d8604ff7cebd28b6108af8cf55 = L.marker(
+            var marker_fc1bca2d6e8bd53e620736e0278b4d93 = L.marker(
                 [48.437436, -123.3408183],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_265b144e34a187580747839edc671c61 = L.AwesomeMarkers.icon(
+            var icon_18efe627ebc1ff8a2741a78eca71b49c = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkgreen",
   "iconColor": "white",
@@ -1308,24 +1231,24 @@
             );
         
     
-        var popup_3af0e60d00f48d8fd469c2a79611d2cc = L.popup({
+        var popup_ad7c231fdf554869afa5801e5f77c474 = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_3cc41317b2c817b513bbeab741079c23 = $(`<div id="html_3cc41317b2c817b513bbeab741079c23" style="width: 100.0%; height: 100.0%;"><a href="details/novel_8.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_3af0e60d00f48d8fd469c2a79611d2cc.setContent(html_3cc41317b2c817b513bbeab741079c23);
+                var html_3669864b6b6c9409aa47f06a52901ec9 = $(`<div id="html_3669864b6b6c9409aa47f06a52901ec9" style="width: 100.0%; height: 100.0%;"><a href="details/novel_8.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_ad7c231fdf554869afa5801e5f77c474.setContent(html_3669864b6b6c9409aa47f06a52901ec9);
             
         
 
-        marker_180ac2d8604ff7cebd28b6108af8cf55.bindPopup(popup_3af0e60d00f48d8fd469c2a79611d2cc)
+        marker_fc1bca2d6e8bd53e620736e0278b4d93.bindPopup(popup_ad7c231fdf554869afa5801e5f77c474)
         ;
 
         
     
     
-            marker_180ac2d8604ff7cebd28b6108af8cf55.bindTooltip(
+            marker_fc1bca2d6e8bd53e620736e0278b4d93.bindTooltip(
                 `<div>
                      2023 — 前夜
                  </div>`,
@@ -1335,17 +1258,17 @@
             );
         
     
-                marker_180ac2d8604ff7cebd28b6108af8cf55.setIcon(icon_265b144e34a187580747839edc671c61);
+                marker_fc1bca2d6e8bd53e620736e0278b4d93.setIcon(icon_18efe627ebc1ff8a2741a78eca71b49c);
             
     
-            var marker_618fca9aee084b2c041dc4799a6fb16a = L.marker(
+            var marker_bcacba8f4aa97d9d08690030bf3a4c99 = L.marker(
                 [48.4309074, -123.3675599],
                 {
 }
-            ).addTo(marker_cluster_b6c50360f46acfad9025c7241144bebd);
+            ).addTo(marker_cluster_da0326f309ce90e6b9998148d99f3691);
         
     
-            var icon_3c74e3b394b0202bc32a44573084010b = L.AwesomeMarkers.icon(
+            var icon_8f953a9a9ac63423786b9464361af4c6 = L.AwesomeMarkers.icon(
                 {
   "markerColor": "darkpurple",
   "iconColor": "white",
@@ -1356,24 +1279,24 @@
             );
         
     
-        var popup_47dea18d14dcdc599f71c10572c035c8 = L.popup({
+        var popup_ea85a477d0a375cdefafa591cc1845ca = L.popup({
   "maxWidth": "100%",
 });
 
         
             
-                var html_64b47a49469022dc8d8caaf4f061cbc7 = $(`<div id="html_64b47a49469022dc8d8caaf4f061cbc7" style="width: 100.0%; height: 100.0%;"><a href="details/2024.html" target="details-frame">打開記憶</a></div>`)[0];
-                popup_47dea18d14dcdc599f71c10572c035c8.setContent(html_64b47a49469022dc8d8caaf4f061cbc7);
+                var html_21237804b28ec30dd1145c509179c418 = $(`<div id="html_21237804b28ec30dd1145c509179c418" style="width: 100.0%; height: 100.0%;"><a href="details/2024.html" target="details-frame">打開記憶</a></div>`)[0];
+                popup_ea85a477d0a375cdefafa591cc1845ca.setContent(html_21237804b28ec30dd1145c509179c418);
             
         
 
-        marker_618fca9aee084b2c041dc4799a6fb16a.bindPopup(popup_47dea18d14dcdc599f71c10572c035c8)
+        marker_bcacba8f4aa97d9d08690030bf3a4c99.bindPopup(popup_ea85a477d0a375cdefafa591cc1845ca)
         ;
 
         
     
     
-            marker_618fca9aee084b2c041dc4799a6fb16a.bindTooltip(
+            marker_bcacba8f4aa97d9d08690030bf3a4c99.bindTooltip(
                 `<div>
                      2024 — 盧西塔尼亞皇冠聯營
                  </div>`,
@@ -1383,10 +1306,10 @@
             );
         
     
-                marker_618fca9aee084b2c041dc4799a6fb16a.setIcon(icon_3c74e3b394b0202bc32a44573084010b);
+                marker_bcacba8f4aa97d9d08690030bf3a4c99.setIcon(icon_8f953a9a9ac63423786b9464361af4c6);
             
     
-            marker_cluster_b6c50360f46acfad9025c7241144bebd.addTo(map_3196b73fa37a610f8dbc481b5696bdba);
+            marker_cluster_da0326f309ce90e6b9998148d99f3691.addTo(map_141f77b955319e58827e59f440bea0ac);
         
 </script>
 </html>
