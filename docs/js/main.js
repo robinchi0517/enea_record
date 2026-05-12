@@ -5,6 +5,46 @@ document.addEventListener('DOMContentLoaded', () => {
   const mapFrame = document.getElementById('map-frame');
 
   let isOpen = false;
+  let isMusicPlaying = false;
+  let playerFrame = null;
+  const musicToggle = document.getElementById('music-toggle');
+  const playlistId = 'PLKKek0lIEzamvUdm3PaDGJCFk_NxOOQ-t'; // YouTube 播放清單 ID
+
+  function createPlayer() {
+    if (!playlistId) return;
+    playerFrame = document.createElement('iframe');
+    playerFrame.src = `https://www.youtube.com/embed/videoseries?list=${playlistId}&autoplay=1&loop=1&controls=0&disablekb=1&iv_load_policy=3&modestbranding=1&playlist=${playlistId}`;
+    playerFrame.allow = 'autoplay; encrypted-media';
+    playerFrame.style.position = 'absolute';
+    playerFrame.style.width = '1px';
+    playerFrame.style.height = '1px';
+    playerFrame.style.left = '-9999px';
+    playerFrame.style.border = '0';
+    document.body.appendChild(playerFrame);
+    isMusicPlaying = true;
+    musicToggle.textContent = '⏸︎';
+  }
+
+  function removePlayer() {
+    if (!playerFrame) return;
+    playerFrame.remove();
+    playerFrame = null;
+    isMusicPlaying = false;
+    musicToggle.textContent = '▶︎';
+  }
+
+  musicToggle.addEventListener('click', () => {
+    if (isMusicPlaying) {
+      removePlayer();
+    } else {
+      createPlayer();
+    }
+  });
+
+  const playMusic = confirm('是否播放背景音樂？');
+  if (playMusic) {
+    createPlayer();
+  }
 
   // 漢堡選單展開/收起
   toggle.addEventListener('click', () => {

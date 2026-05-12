@@ -32,14 +32,39 @@ html, body {
   flex-direction: column;
 }
 
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
 /* 選單開關按鈕 */
 .menu-toggle {
-  align-self: flex-end;
   cursor: pointer;
   font-size: 24px;
   padding: 10px;
   height: 40px;
   line-height: 20px;
+  background: #f5efdc;
+  border: 1px solid #bfa78a;
+  border-radius: 6px;
+  color: #3a2f2a;
+}
+
+.music-toggle {
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 12px;
+  background: #f5efdc;
+  color: #3a2f2a;
+  border: 1px solid #bfa78a;
+  border-radius: 6px;
+}
+
+.music-toggle:hover,
+.menu-toggle:hover {
+  background: #e7ddc5;
 }
 
 /* 選單 */
@@ -115,7 +140,10 @@ iframe#details {
   <iframe src="map.html" id="map-frame"></iframe>
 
   <div class="details-container">
-    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <div class="controls">
+      <div class="menu-toggle" id="menu-toggle">☰</div>
+      <button class="music-toggle" id="music-toggle">▶︎</button>
+    </div>
     <div class="menu" id="menu"></div>
     <iframe id="details" name="details-frame" src="details/main.html"></iframe>
   </div>
