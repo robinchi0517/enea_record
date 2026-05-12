@@ -2,7 +2,7 @@
   {
     "id": "1644",
     "coords": [45.445141, 12.326502],
-    "zoom": 12,
+    "zoom": 14,
     "year": "1644",
     "summary": "出生",
     "color": "beige",
@@ -13,7 +13,7 @@
   {
     "id": "1660",
     "coords": [45.431009, 12.334718],
-    "zoom": 12,
+    "zoom": 14,
     "year": "1660",
     "summary": "他的人生停在……",
     "color": "beige",
@@ -24,13 +24,24 @@
   {
     "id": "1683",
     "coords": [45.449763, 12.323427],
-    "zoom": 12,
+    "zoom": 14,
     "year": "1683",
     "summary": "在焰火中化成一團焦黑",
     "color": "beige",
     "icon": "fire",
     "title": "1683 - 第一任照顧者死亡、第二任接手",
     "page": "details/1683.html"
+  },
+  {
+    "id": "1694",
+    "coords": [44.4598426, 8.6865303],
+    "zoom": 12,
+    "year": "1694",
+    "summary": "不如沉到海底",
+    "color": "darkgreen",
+    "icon": "hourglass",
+    "title": "1694 - 熱拿亞",
+    "page": "details/1694.html"
   },
   {
     "id": "1725",
@@ -101,18 +112,18 @@
   {
     "id": "1810",
     "coords": [42.1814979,-89.1351954],
-    "zoom": 12,
+    "zoom": 17,
     "year": "1810",
     "summary": "這段時間如同夢境",
     "color": "beige",
-    "icon": "hourglass",
+    "icon": "grain",
     "title": "1810 - 跟第五任照顧者的生活前期",
     "page": "details/1810.html"
   },
   {
     "id": "novel_1",
     "coords": [42.181371, -89.134199],
-    "zoom": 13,
+    "zoom": 17,
     "year": "1820",
     "summary": "C大調",
     "color": "darkgreen",
@@ -134,7 +145,7 @@
   {
     "id": "novel_3",
     "coords": [42.273119, -89.090549],
-    "zoom": 13,
+    "zoom": 17,
     "year": "1852",
     "summary": "詞彙",
     "color": "darkgreen",
@@ -145,7 +156,7 @@
   {
     "id": "novel_4",
     "coords": [42.167316, -89.144168],
-    "zoom": 13,
+    "zoom": 15,
     "year": "1856",
     "summary": "惡夢",
     "color": "darkgreen",
@@ -156,7 +167,7 @@
   {
     "id": "novel_5",
     "coords": [42.271262, -89.093659],
-    "zoom": 13,
+    "zoom": 18,
     "year": "1860",
     "summary": "奇蹟",
     "color": "darkgreen",
@@ -167,7 +178,7 @@
   {
     "id": "novel_6",
     "coords": [42.271560, -89.092942],
-    "zoom": 13,
+    "zoom": 18,
     "year": "2024/1860",
     "summary": "光秒",
     "color": "darkgreen",
@@ -178,7 +189,7 @@
   {
     "id": "1866",
     "coords": [42.2714835, -89.0922337],
-    "zoom": 13,
+    "zoom": 18,
     "year": "1866",
     "summary": "六則新聞",
     "color": "darkpurple",
@@ -189,7 +200,7 @@
   {
     "id": "2010",
     "coords": [34.043930, -118.247710],
-    "zoom": 13,
+    "zoom": 14,
     "year": "2010",
     "summary": "狩獵月",
     "color": "beige",
@@ -200,7 +211,7 @@
   {
     "id": "2011",
     "coords": [34.051488, -118.255144],
-    "zoom": 13,
+    "zoom": 14,
     "year": "2011",
     "summary": "鳴門骨",
     "color": "beige",
@@ -211,7 +222,7 @@
   {
     "id": "novel_10",
     "coords": [48.416667, -123.389889],
-    "zoom": 13,
+    "zoom": 14,
     "year": "2019",
     "summary": "異客",
     "color": "darkgreen",
@@ -222,7 +233,7 @@
   {
     "id": "novel_9",
     "coords": [48.4399672, -123.3603505],
-    "zoom": 13,
+    "zoom": 14,
     "year": "2022",
     "summary": "男生宿舍二三事",
     "color": "darkgreen",
@@ -233,7 +244,7 @@
   {
     "id": "novel_7",
     "coords": [48.4215922, -123.3817973],
-    "zoom": 13,
+    "zoom": 14,
     "year": "2023",
     "summary": "紙娃娃",
     "color": "darkgreen",
@@ -244,7 +255,7 @@
   {
     "id": "novel_8",
     "coords": [48.437436, -123.3408183],
-    "zoom": 13,
+    "zoom": 14,
     "year": "2023",
     "summary": "前夜",
     "color": "darkgreen",
@@ -255,7 +266,7 @@
   {
     "id": "2024",
     "coords": [48.4309074, -123.3675599],
-    "zoom": 13,
+    "zoom": 14,
     "year": "2024",
     "summary": "盧西塔尼亞皇冠聯營",
     "color": "darkpurple",
