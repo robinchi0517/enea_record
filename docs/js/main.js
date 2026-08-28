@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
     playerFrame.style.position = 'absolute';
     playerFrame.style.width = '1px';
     playerFrame.style.height = '1px';
-    playerFrame.style.left = '-9999px';
+    playerFrame.style.left = '-1px';
     playerFrame.style.border = '0';
     document.body.appendChild(playerFrame);
     isMusicPlaying = true;
@@ -40,11 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
       createPlayer();
     }
   });
-
-  const playMusic = confirm('是否播放背景音樂？');
-  if (playMusic) {
-    createPlayer();
-  }
 
   // 漢堡選單展開/收起
   toggle.addEventListener('click', () => {
