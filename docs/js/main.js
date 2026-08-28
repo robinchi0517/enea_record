@@ -3,74 +3,177 @@ document.addEventListener('DOMContentLoaded', () => {
   const menu = document.getElementById('menu');
   const detailsFrame = document.getElementById('details');
   const mapFrame = document.getElementById('map-frame');
+  const musicToggle = document.getElementById('music-toggle');
+  const randomSongButton = document.getElementById('random-song');
+  const currentSongLabel = document.getElementById('current-song');
 
   let isOpen = false;
   let isMusicPlaying = false;
-  let playerFrame = null;
-  const musicToggle = document.getElementById('music-toggle');
-  const playlistId = 'PLKKek0lIEzamvUdm3PaDGJCFk_NxOOQ-t'; // YouTube 播放清單 ID
+  let player = null;
+  let songs = [];
+  let currentSongIndex = -1;
 
-  function createPlayer() {
-    if (!playlistId) return;
-    playerFrame = document.createElement('iframe');
-    playerFrame.src = `https://www.youtube.com/embed/videoseries?list=${playlistId}&autoplay=1&loop=1&controls=0&disablekb=1&iv_load_policy=3&modestbranding=1&playlist=${playlistId}`;
-    playerFrame.allow = 'autoplay; encrypted-media';
-    playerFrame.style.position = 'absolute';
-    playerFrame.style.width = '1px';
-    playerFrame.style.height = '1px';
-    playerFrame.style.left = '-1px';
-    playerFrame.style.border = '0';
-    document.body.appendChild(playerFrame);
-    isMusicPlaying = true;
-    musicToggle.textContent = '⏸︎';
+  function updatePlayButton() {
+    if (!musicToggle) return;
+    musicToggle.textContent = isMusicPlaying ? '⏸︎' : '▶︎';
+    musicToggle.setAttribute('aria-label', isMusicPlaying ? '暫停音樂' : '播放音樂');
   }
 
-  function removePlayer() {
-    if (!playerFrame) return;
-    playerFrame.remove();
-    playerFrame = null;
-    isMusicPlaying = false;
-    musicToggle.textContent = '▶︎';
-  }
+  function updateCurrentSongLabel() {
+    if (!currentSongLabel) return;
 
-  musicToggle.addEventListener('click', () => {
-    if (isMusicPlaying) {
-      removePlayer();
-    } else {
-      createPlayer();
+    if (!songs.length || currentSongIndex < 0) {
+      currentSongLabel.textContent = '尚未播放';
+      return;
     }
-  });
 
-  // 漢堡選單展開/收起
-  toggle.addEventListener('click', () => {
-    isOpen = !isOpen;
-    menu.classList.toggle('open', isOpen);
-    toggle.textContent = isOpen ? '✖' : '☰';
-  });
+    currentSongLabel.textContent = songs[currentSongIndex].title;
+  }
 
-  // 載入 markers.json
+  function loadSongByIndex(index, autoplay = false) {
+    if (!player || !songs.length || index < 0 || index >= songs.length) return;
+
+    const song = songs[index];
+    currentSongIndex = index;
+    updateCurrentSongLabel();
+    player.loadVideoById(song.id, 0, 'large');
+
+    if (autoplay) {
+      player.playVideo();
+      isMusicPlaying = true;
+      updatePlayButton();
+    }
+  }
+
+  function pickRandomSong() {
+    if (!songs.length) return;
+
+    let nextIndex = currentSongIndex;
+    if (songs.length > 1) {
+      while (nextIndex === currentSongIndex) {
+        nextIndex = Math.floor(Math.random() * songs.length);
+      }
+    }
+
+    loadSongByIndex(nextIndex, isMusicPlaying);
+  }
+
+  function toggleMusic() {
+    if (!player || !songs.length) return;
+
+    if (currentSongIndex < 0) {
+      loadSongByIndex(0, true);
+      return;
+    }
+
+    if (isMusicPlaying) {
+      player.pauseVideo();
+      isMusicPlaying = false;
+      updatePlayButton();
+      return;
+    }
+
+    player.playVideo();
+    isMusicPlaying = true;
+    updatePlayButton();
+  }
+
+  function onYouTubeReady() {
+    if (!window.YT || !window.YT.Player) return;
+
+    player = new YT.Player('player', {
+      height: '0',
+      width: '0',
+      videoId: '',
+      playerVars: {
+        autoplay: 0,
+        controls: 0,
+        disablekb: 1,
+        fs: 0,
+        iv_load_policy: 3,
+        modestbranding: 1,
+        rel: 0,
+        playsinline: 1
+      },
+      events: {
+        onReady: () => {
+          isMusicPlaying = false;
+          updatePlayButton();
+          updateCurrentSongLabel();
+        },
+        onStateChange: (event) => {
+          if (event.data === YT.PlayerState.PLAYING) {
+            isMusicPlaying = true;
+            updatePlayButton();
+          } else if (event.data === YT.PlayerState.PAUSED) {
+            isMusicPlaying = false;
+            updatePlayButton();
+          } else if (event.data === YT.PlayerState.ENDED) {
+            player.playVideo();
+          }
+        }
+      }
+    });
+  }
+
+  if (musicToggle) {
+    musicToggle.addEventListener('click', toggleMusic);
+  }
+
+  if (randomSongButton) {
+    randomSongButton.addEventListener('click', () => {
+      pickRandomSong();
+    });
+  }
+
+  if (toggle) {
+    toggle.addEventListener('click', () => {
+      isOpen = !isOpen;
+      menu.classList.toggle('open', isOpen);
+      toggle.textContent = isOpen ? '✖' : '☰';
+    });
+  }
+
+  fetch('music.json')
+    .then((res) => res.json())
+    .then((data) => {
+      songs = Array.isArray(data) ? data : [];
+      if (songs.length) {
+        currentSongIndex = 0;
+        updateCurrentSongLabel();
+      }
+    })
+    .catch((err) => {
+      console.error('載入 music.json 出錯:', err);
+    });
+
+  if (window.YT && window.YT.Player) {
+    onYouTubeReady();
+  } else {
+    window.onYouTubeIframeAPIReady = onYouTubeReady;
+  }
+
   fetch('markers.json')
-    .then(res => res.json())
-    .then(markers => {
-      markers.forEach(marker => {
+    .then((res) => res.json())
+    .then((markers) => {
+      markers.forEach((marker) => {
         const item = document.createElement('div');
         item.textContent = marker.title;
         item.classList.add('menu-item');
         item.style.cursor = 'pointer';
         item.style.padding = '5px';
         item.addEventListener('click', () => {
-          // 右邊 iframe 換頁
           detailsFrame.src = marker.page;
 
-          // 左邊地圖飛過去
-          mapFrame.contentWindow.postMessage({
-            type: "flyTo",
-            lat: marker.coords[0],
-            lng: marker.coords[1],
-            zoom: marker.zoom
-          }, "*");
+          if (mapFrame && mapFrame.contentWindow) {
+            mapFrame.contentWindow.postMessage({
+              type: 'flyTo',
+              lat: marker.coords[0],
+              lng: marker.coords[1],
+              zoom: marker.zoom
+            }, '*');
+          }
 
-          // 收起選單
           menu.classList.remove('open');
           toggle.textContent = '☰';
           isOpen = false;
@@ -78,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
         menu.appendChild(item);
       });
     })
-    .catch(err => {
-      console.error("載入 markers.json 出錯:", err);
+    .catch((err) => {
+      console.error('載入 markers.json 出錯:', err);
     });
 });
