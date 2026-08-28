@@ -36,13 +36,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const song = songs[index];
     currentSongIndex = index;
     updateCurrentSongLabel();
-    player.loadVideoById(song.id, 0, 'large');
 
     if (autoplay) {
+      player.loadVideoById(song.id, 0, 'large');
       player.playVideo();
       isMusicPlaying = true;
       updatePlayButton();
+    } else {
+      player.cueVideoById(song.id, 0, 'large');
+      isMusicPlaying = false;
+      updatePlayButton();
     }
+  }
+
+  function loadInitialSong() {
+    if (!player || !songs.length || currentSongIndex < 0) return;
+
+    loadSongByIndex(currentSongIndex);
   }
 
   function pickRandomSong() {
@@ -55,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
 
-    loadSongByIndex(nextIndex, isMusicPlaying);
+    loadSongByIndex(nextIndex);
   }
 
   function toggleMusic() {
@@ -98,6 +108,7 @@ document.addEventListener('DOMContentLoaded', () => {
       events: {
         onReady: () => {
           isMusicPlaying = false;
+          loadInitialSong();
           updatePlayButton();
           updateCurrentSongLabel();
         },
@@ -140,6 +151,7 @@ document.addEventListener('DOMContentLoaded', () => {
       songs = Array.isArray(data) ? data : [];
       if (songs.length) {
         currentSongIndex = 0;
+        loadInitialSong();
         updateCurrentSongLabel();
       }
     })
